@@ -32,7 +32,6 @@ pipeline {
         stage( 'NPM build') {
                     steps {
                         sh "npm run start:dev &"
-			sh "curl 127.0.0.1:3000"
                     }
 		    
                 }
