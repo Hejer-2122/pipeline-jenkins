@@ -36,7 +36,7 @@ pipeline {
                 }
          stage ('Test') {
                     steps {
-                        sh "curl http://localhost:3000"
+                        sh "curl localhost:3000"
                         
                     }
                 }
