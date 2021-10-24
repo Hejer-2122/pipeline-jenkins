@@ -31,13 +31,14 @@ pipeline {
                 }
         stage( 'NPM build') {
                     steps {
-                        sh "npm run start:dev"
+                        sh "npm run start:dev &"
+			sh "curl http://localhost:3000"
                     }
 		    
                 }
 	stage ('Test') {
 		steps {
-			sh "curl http://localhost:3000"
+		sh "curl http://localhost:3000"
 		}
          
     		}  
