@@ -34,11 +34,9 @@ pipeline {
                         sh "npm run start:dev &"
                     }
                 }
-	sleep 10
          stage ('Test') {
                     steps {
-                        sh "curl localhost:3000"
-                        
+                        sh "curl 127.0.0.1:3000"
                     }
                 }
     }    
