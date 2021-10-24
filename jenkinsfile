@@ -29,14 +29,19 @@ pipeline {
                         sh "npm install"
                     }
                 }
-        stage('NPM build'){
+        stage( 'NPM build') {
                     steps {
                         sh "npm run start:dev &"
 			sh "curl 127.0.0.1:3000"
                     }
 		    
                 }
+	stage ('Test') {
+		steps {
+			sh "curl 127.0.0.1:3000"
+		}
          
-    }    
+    		}  
+	}
 }
 
