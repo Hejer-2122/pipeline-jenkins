@@ -8,7 +8,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './jenkins/scripts/test.sh'
+                sh 'npm run start:dev'
+                sh 'curl -i http://localhost:3000'
             }
         }
         
