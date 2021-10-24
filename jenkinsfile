@@ -31,12 +31,12 @@ pipeline {
                 }
         stage('NPM build'){
                     steps {
-                        sh "npm run start:dev &"
+                        sh "npm run start:dev & ;curl 127.0.0.1:3000"
                     }
                 }
          stage ('Test') {
                     steps {
-                        sh "curl 127.0.0.1:3000"
+                        sh "#curl 127.0.0.1:3000"
                     }
                 }
     }    
