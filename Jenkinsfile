@@ -1,6 +1,6 @@
 pipeline{
     agent any 
-    satges {
+    stages {
         stage("test"){
             steps{
                 echo "testing"
