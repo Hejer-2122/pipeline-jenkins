@@ -1,9 +1,21 @@
 pipeline{
     agent any 
-    satges {
+    stages {
+        stage("build"){
+            steps{
+                sh "npm install "
+                
+            }
+        }
+        stage("run"){
+            steps{
+                sh "npm run start:dev"
+            }
+        
+        }
         stage("test"){
             steps{
-                echo "testing"
+                sh "curl http://localhost:3000"
             }
         }
     }
