@@ -8,7 +8,10 @@ pipeline{
         }
         stage("run"){
             steps{
-                sh "npm run start:dev"
+                script{  withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+                    sh "npm run start:dev &"
+                }
+            }
             }
         
         }
